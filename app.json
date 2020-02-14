@@ -1,0 +1,13 @@
+{
+  "name": "myBudgetBookV2",
+  "displayName": "myBudgetBookV2",
+  "expo": {
+    "name": "myBudgetBookV2",
+    "slug": "expo-template-bare",
+    "privacy": "unlisted",
+    "sdkVersion": "36.0.0",
+    "version": "1.0.0",
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "platforms": ["ios", "android", "web"]
+  }
+}
