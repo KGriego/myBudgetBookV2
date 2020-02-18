@@ -54,7 +54,7 @@ const data = [
 ];
 
 const styles = StyleSheet.create({
-  homeContainer: { height: `100%`, width: `100vw` }
+  homeContainer: {}
 });
 
 // Props that Transactions uses right below

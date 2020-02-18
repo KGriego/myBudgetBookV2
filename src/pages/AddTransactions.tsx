@@ -3,8 +3,10 @@ import React from "react";
 import { StatusBar, View, StyleSheet } from "react-native";
 import { CheckBox } from "react-native-elements";
 import { NavigationInjectedProps } from "react-navigation";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 /* Component Imports */
+import TransactionForm from "../components/forms/TransactionForm";
 import BackTrigger from "../components/backTrigger";
 import { RedText } from "../components/coloredTexts";
 
@@ -13,16 +15,24 @@ import { Container } from "../styles";
 const styles = StyleSheet.create({
   // @ts-ignore
   container: {
-    ...Container.base,
-    justifyContent: Container.justifyContentSpaceAround
+    ...Container.baseRow,
+    justifyContent: Container.justifyContentFlexStart
   },
   // @ts-ignore
   checkbox: {
-    ...Container.base
+    ...Container.baseRowCenter
+  },
+  // @ts-ignore
+  formContainer: {
+    ...Container.baseColumn,
+    ...Container.stretchContainer,
+    borderColor: `red`,
+    borderWidth: 1,
+    borderStyle: `solid`
   }
 });
 
-interface AddTransactionProps extends NavigationInjectedProps {}
+interface AddTransactionProps extends NavigationInjectedProps { }
 interface AddTransactionState {
   value: string;
 }
@@ -30,7 +40,7 @@ interface AddTransactionState {
 export class AddTransactions extends React.Component<
   AddTransactionProps,
   AddTransactionState
-> {
+  > {
   constructor(props) {
     super(props);
     this.state = { value: `Expense` };
@@ -44,7 +54,7 @@ export class AddTransactions extends React.Component<
     return (
       <>
         <StatusBar hidden />
-        <BackTrigger title={`Add Transaction`} lastRoute={`Transactions`} />
+        <BackTrigger title={`Add ${value}`} lastRoute={`Transactions`} />
         <View style={styles.container}>
           <View style={styles.checkbox}>
             <CheckBox
@@ -74,18 +84,18 @@ export class AddTransactions extends React.Component<
             <RedText text={` Transfer`} />
           </View>
         </View>
-        <View style={styles.container}>
+        <View style={[styles.container, { textAlign: `left` }]}>
           <RedText text={`Use Template`} />
         </View>
-        <View>
-          {value === `Expense` ? (
-            <RedText text={`some text`} />
-          ) : value === `Income` ? (
-            <RedText text={`income`} />
-          ) : (
-            <RedText text={`transfer`} />
-          )}
-        </View>
+        <KeyboardAwareScrollView>
+          <View style={styles.formContainer}>
+            {value === `Expense` || value === `Income` ? (
+              <TransactionForm />
+            ) : (
+              <RedText text={`transfer`} />
+            )}
+          </View>
+        </KeyboardAwareScrollView>
       </>
     );
   }

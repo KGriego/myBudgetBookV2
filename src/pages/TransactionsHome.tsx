@@ -8,7 +8,7 @@ import { NavigationInjectedProps } from "react-navigation";
 import DrawerTrigger from "../components/drawTrigger";
 import MainTabNavigator from "../navigation/mainTabNavigator";
 
-interface TransactionsHomeProps extends NavigationInjectedProps {}
+interface TransactionsHomeProps extends NavigationInjectedProps { }
 
 export default function TransactionsHome(props: TransactionsHomeProps) {
   const {
@@ -37,10 +37,7 @@ export default function TransactionsHome(props: TransactionsHomeProps) {
           shadowOpacity: 0.3,
           shadowRadius: 3
         }}
-        onPress={() => {
-          console.log(`clicking`);
-          navigate(`AddTransactions`, { go_back_key: state.key });
-        }}
+        onPress={() => navigate(`AddTransactions`, { go_back_key: state.key })}
       >
         <Ionicons
           name={Platform.OS === `ios` ? `ios-add` : `md-add`}

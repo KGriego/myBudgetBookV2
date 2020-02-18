@@ -1,22 +1,13 @@
 /* Library Imports */
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-
-// {
-//     name: "CVS",
-//         category: "Fast Food (Expenses)",
-//     amount: 41.89,
-//     type: "Expense",
-//     recurring: false,
-//     transfer: false
-// }
+import { Container } from "../styles";
 
 const styles = StyleSheet.create({
+  // @ts-ignore
   container: {
-    display: `flex`,
-    flexDirection: `row`
-  },
-  item3: { flexGrow: 1 }
+    ...Container.baseRow
+  }
 });
 
 type TransactionInfoProps = {
@@ -33,7 +24,6 @@ type TransactionInfoProps = {
 export default function TransactionInfo(props: TransactionInfoProps) {
   const { transactionInfo } = props;
   const { name, amount, type, recurring, transfer, category } = transactionInfo;
-  console.log(transactionInfo);
   return (
     <>
       <View>
