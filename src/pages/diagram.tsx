@@ -18,7 +18,7 @@ class Diagram extends React.Component {
   static navigationOptions = {};
 
   render() {
-    return <RedText text="Diagram" />;
+    return <RedText text={`Diagram`} />;
   }
 }
 
@@ -26,9 +26,7 @@ const DiagramStack = createStackNavigator(
   {
     Diagram: {
       screen: Diagram,
-      navigationOptions: {
-        header: () => <DatePicker />
-      }
+      navigationOptions: { header: () => <DatePicker /> }
     }
   },
   config

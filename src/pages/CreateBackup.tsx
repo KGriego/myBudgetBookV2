@@ -1,8 +1,6 @@
 /* Library Imports */
 import React, { useState, createContext, useContext } from "react";
-import {
-  StyleSheet, View, Text, StatusBar
-} from "react-native";
+import { StyleSheet, View, Text, StatusBar } from "react-native";
 
 // pull in header with DrawerTrigger
 import { RedText } from "../components/coloredTexts";
@@ -15,9 +13,9 @@ const CreateBackupScreen = ({ navigation }) => {
 
   return (
     <>
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle={`light-content`} />
       <View style={[styles.body, { backgroundColor: bg }]}>
-        <Text>CreateBackupScreen</Text>
+        <Text>{`CreateBackupScreen`}</Text>
       </View>
     </>
   );
@@ -41,9 +39,7 @@ const styles = StyleSheet.create({
     fontWeight: `400`,
     color: `#fff`
   },
-  highlight: {
-    fontWeight: `700`
-  }
+  highlight: { fontWeight: `700` }
 });
 
 export default CreateBackupScreen;

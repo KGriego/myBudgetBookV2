@@ -18,3 +18,4 @@ export const RedText = ({ text, styles, onPress }: coloredTextProps) => (
     {text}
   </Text>
 );
+RedText.defaultProps = { styles: {}, onPress: null };

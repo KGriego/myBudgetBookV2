@@ -27,7 +27,7 @@ export class OverView extends React.Component<OverviewProps> {
   render() {
     return (
       <>
-        <RedText text="Overview Page" />
+        <RedText text={`Overview Page`} />
       </>
     );
   }
@@ -38,9 +38,7 @@ const OverViewStack = createStackNavigator(
   {
     Overview: {
       screen: withNavigation(OverView),
-      navigationOptions: {
-        header: () => <DatePicker />
-      }
+      navigationOptions: { header: () => <DatePicker /> }
     }
   },
   config
@@ -107,7 +105,7 @@ OverViewStack.router.getStateForAction = (action, state) =>
 // }
 
   prevGetStateForAction(action, state);
-OverViewStack.router.getComponentForRouteName = (routeName) =>
+OverViewStack.router.getComponentForRouteName = routeName =>
   // console.log("getComponentForRouteName", routeName);
   prevGetComponentForRouteName(routeName);
 export default OverViewStack;

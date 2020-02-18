@@ -1,23 +1,10 @@
 /* Library Imports */
-import React, { useState, createContext, useContext } from "react";
-import {
-  StyleSheet, View, Text, StatusBar
-} from "react-native";
+import React from "react";
+import { StyleSheet, View } from "react-native";
 
-// pull in header with DrawerTrigger
+/* Component Imports */
 import { RedText } from "../components/coloredTexts";
 import BackTrigger from "../components/backTrigger";
-
-const CatergoryManagementScreen = (props) => {
-  const { navigation } = props;
-  console.log(props);
-  return (
-    <View style={styles.body}>
-      <BackTrigger title="red" />
-      <Text>CatergoryManagementScreen</Text>
-    </View>
-  );
-};
 
 const styles = StyleSheet.create({
   body: {
@@ -25,21 +12,16 @@ const styles = StyleSheet.create({
     backgroundColor: `#333`,
     justifyContent: `center`,
     padding: 16
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: `600`,
-    color: `#fff`
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: `400`,
-    color: `#fff`
-  },
-  highlight: {
-    fontWeight: `700`
   }
 });
+
+function CatergoryManagementScreen() {
+  return (
+    <View style={styles.body}>
+      <BackTrigger title={`red`} />
+      <RedText text={`CatergoryManagementScreen`} />
+    </View>
+  );
+}
 
 export default CatergoryManagementScreen;

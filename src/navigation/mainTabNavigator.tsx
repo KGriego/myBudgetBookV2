@@ -1,28 +1,27 @@
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createMaterialTopTabNavigator } from "react-navigation-tabs";
 
-import OverViewStack from "../pages/overView";
+// import OverViewStack from "../pages/overView";
 import TransactionsStack from "../pages/transactions";
-import StatisticsStack from "../pages/statistics";
-import DiagramStack from "../pages/diagram";
-import BudgetStack from "../pages/budgets";
+// import StatisticsStack from "../pages/statistics";
+// import DiagramStack from "../pages/diagram";
+// import BudgetStack from "../pages/budgets";
 
 const RootNavigator = createMaterialTopTabNavigator(
   {
-    OverViewStack,
-    TransactionsStack,
-    StatisticsStack,
-    DiagramStack,
-    BudgetStack
+    // OverViewStack,
+    TransactionsStack
+    // StatisticsStack,
+    // DiagramStack,
+    // BudgetStack
   },
   {
     initialRouteName: `TransactionsStack`,
-    tabBarOptions: {
-      showIcon: true
-    }
+    tabBarOptions: { showIcon: true }
   }
 );
 
+// @ts-ignore
 RootNavigator.path = `Home`;
 
 export default createAppContainer(
@@ -33,8 +32,6 @@ export default createAppContainer(
       // Login: LoginNavigator,
       Main: RootNavigator
     },
-    {
-      backBehavior: `initialRoute`
-    }
+    { backBehavior: `initialRoute` }
   )
 );

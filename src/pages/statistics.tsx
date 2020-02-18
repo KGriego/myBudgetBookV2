@@ -17,7 +17,7 @@ export class Statistics extends React.Component {
   static navigationOptions = {};
 
   render() {
-    return <RedText text="Statistics Page" />;
+    return <RedText text={`Statistics Page`} />;
   }
 }
 
@@ -26,9 +26,7 @@ const StatisticsStack = createStackNavigator(
   {
     Statistics: {
       screen: Statistics,
-      navigationOptions: {
-        header: () => <DatePicker />
-      }
+      navigationOptions: { header: () => <DatePicker /> }
     }
   },
   config
@@ -95,7 +93,7 @@ StatisticsStack.router.getStateForAction = (action, state) =>
 // }
 
   prevGetStateForAction(action, state);
-StatisticsStack.router.getComponentForRouteName = (routeName) =>
+StatisticsStack.router.getComponentForRouteName = routeName =>
   // console.log("getComponentForRouteName", routeName);
   prevGetComponentForRouteName(routeName);
 export default StatisticsStack;

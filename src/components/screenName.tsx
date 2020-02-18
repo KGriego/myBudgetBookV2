@@ -1,6 +1,11 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { Text } from "react-native";
 
-export default function ScreenName(props) {
-  return <Text>{props.name}</Text>;
+type ScreenNameProps = {
+  name: string;
+};
+
+export default function ScreenName(props: ScreenNameProps) {
+  const { name } = props;
+  return <Text>{name}</Text>;
 }

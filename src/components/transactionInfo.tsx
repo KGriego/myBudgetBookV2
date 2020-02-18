@@ -11,23 +11,36 @@ import { Text, View, StyleSheet } from "react-native";
 //     transfer: false
 // }
 
-export default function TransactionsList(props) {
-  console.log(props.transactionInfo);
-  const {
-    name,
-    amount,
-    type,
-    recurring,
-    transfer,
-    category
-  } = props.transactionInfo;
+const styles = StyleSheet.create({
+  container: {
+    display: `flex`,
+    flexDirection: `row`
+  },
+  item3: { flexGrow: 1 }
+});
+
+type TransactionInfoProps = {
+  transactionInfo: {
+    name: string;
+    amount: number;
+    type: string;
+    recurring: boolean;
+    transfer: boolean;
+    category: string;
+  };
+};
+
+export default function TransactionInfo(props: TransactionInfoProps) {
+  const { transactionInfo } = props;
+  const { name, amount, type, recurring, transfer, category } = transactionInfo;
+  console.log(transactionInfo);
   return (
     <>
       <View>
         <View style={styles.container}>
           <Text style={{ color: `red` }}>{name}</Text>
           <Text style={{ color: `red`, textAlign: `right`, flexGrow: 1 }}>
-            Day, month/day/year
+            {`Day, month/day/year`}
           </Text>
         </View>
         <View style={styles.container}>
@@ -43,9 +56,7 @@ export default function TransactionsList(props) {
               flexGrow: 1
             }}
           >
-            {type === `Expense` && `-`}
-            $
-            {amount}
+            {type === `Expense` && `-`}{`$`}{amount}
           </Text>
         </View>
       </View>
@@ -53,13 +64,3 @@ export default function TransactionsList(props) {
     </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    display: `flex`,
-    flexDirection: `row`
-  },
-  item3: {
-    flexGrow: 1
-  }
-});

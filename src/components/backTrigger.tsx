@@ -35,7 +35,7 @@ class DrawerTrigger extends React.Component<DrawerTriggerProps> {
         <Ionicons
           name={Platform.OS === `ios` ? `ios-arrow-back` : `md-arrow-back`}
           size={30}
-          color="grey"
+          color={`grey`}
         >
           {` `}
           {title}

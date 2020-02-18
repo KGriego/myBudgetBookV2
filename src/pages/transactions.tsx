@@ -14,18 +14,57 @@ const config = Platform.select({
   // default: {},
 });
 
-interface OverviewProps extends NavigationInjectedProps {
+interface TransactionsProps extends NavigationInjectedProps {
   title: string;
 }
 
-export class Transactions extends React.Component {
+const data = [
+  {
+    day: 1580569200,
+    endingBalance: 175.27,
+    transactions: [
+      {
+        name: `Rent`,
+        amount: 1417.94,
+        type: `Expense`,
+        recurring: false,
+        transfer: false,
+        category: `Rent (LV Apartment)`
+      },
+      {
+        name: `Tacos`,
+        amount: 10.03,
+        type: `Expense`,
+        recurring: false,
+        transfer: false,
+        category: `Fast Food (Expenses)`
+      }
+    ]
+  },
+  {
+    day: 1580648400,
+    endingBalance: 123.35,
+    transactions: [
+      {
+        name: `CVS`,
+        amount: 41.89,
+        type: `Expense`,
+        recurring: false,
+        transfer: false,
+        category: `Fast Food (Expenses)`
+      }
+    ]
+  }
+];
+
+export class Transactions extends React.Component<TransactionsProps> {
   // we won't need to configure navigationOptions just yet
   static navigationOptions = {};
 
   render() {
     return (
       <View>
-        <TransactionsList />
+        <TransactionsList data={data} />
       </View>
     );
   }
@@ -36,17 +75,17 @@ const TransactionsStack = createStackNavigator(
   {
     Transactions: {
       screen: Transactions,
-      navigationOptions: (props) => ({
-        header: () => <DatePicker />
-      })
+      navigationOptions: props => ({ header: () => <DatePicker /> })
     }
   },
   config
 );
 TransactionsStack.navigationOptions = {
   tabBarLabel: `Transactions`,
+  // eslint-disable-next-line react/prop-types
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
+      // @ts-ignore
       focused={focused}
       name={Platform.OS === `ios` ? `ios-barcode` : `md-barcode`}
     />
@@ -55,52 +94,4 @@ TransactionsStack.navigationOptions = {
 
 TransactionsStack.path = ``;
 
-// console.log(Object.keys(StatisticsStack.router));
-const prevGetStateForAction = TransactionsStack.router.getStateForAction;
-const prevChildRouters = TransactionsStack.router.childRouters;
-const prevGetComponentForState = TransactionsStack.router.getComponentForState;
-const prevGetComponentForRouteName = TransactionsStack.router.getComponentForRouteName;
-const prevGetActionCreators = TransactionsStack.router.getActionCreators;
-const prevGetPathAndParamsForState = TransactionsStack.router.getPathAndParamsForState;
-const prevGetActionForPathAndParams = TransactionsStack.router.getActionForPathAndParams;
-const prevGetScreenOptions = TransactionsStack.router.getScreenOptions;
-
-TransactionsStack.router.getStateForAction = (action, state) =>
-// console.log("getStateForAction");
-// console.log(action, state);
-// console.log("==============");
-// if (state && action.type === "Navigation/COMPLETE_TRANSITION") {
-//   let routes = state.routes;
-
-//   if (routes.length === 1) {
-//     return {
-//       ...state,
-//       index: 0,
-//     };
-//   }
-
-//   const lastScene: NavigationRoute = routes.slice(-1)[0];
-//   const lastSceneName = lastScene.routeName;
-
-//   routes = routes.filter((item: NavigationRoute, index: number) => {
-//     if (index === 0) {
-//       return true;
-//     }
-
-//     return (item.routeName !== lastSceneName)
-//   });
-
-//   routes.push(lastScene);
-
-//   return {
-//     ...state,
-//     index: routes.length - 1,
-//     routes
-//   };
-// }
-
-  prevGetStateForAction(action, state);
-TransactionsStack.router.getComponentForRouteName = (routeName) =>
-  // console.log("getComponentForRouteName", routeName);
-  prevGetComponentForRouteName(routeName);
 export default TransactionsStack;
