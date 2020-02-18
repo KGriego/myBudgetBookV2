@@ -1,10 +1,10 @@
 {
   "scripts": {
-    "android:local": "expo start --offline --localhost --android",
-    "android:dev": "adb reverse tcp:8081 tcp:8081 && react-native run-android",
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "web": "expo start --web",
+    "start:local": "expo start --offline --localhost --android",
+    "start:dev": "adb reverse tcp:8081 tcp:8081 && react-native run-android",
+    "start:android": "react-native run-android",
+    "start:ios": "react-native run-ios",
+    "start:web": "expo start --web",
     "start": "react-native start",
     "test": "jest",
     "clear:cache": "rm -rf web-build ios android",
@@ -37,8 +37,16 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@types/react": "^16.9.0",
+    "@react-native-community/eslint-config": "0.0.7",
     "@types/react-native": "^0.60.23",
+    "babel-eslint": "^10.0.3",
     "babel-preset-expo": "^8.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
     "jest-expo": "^36.0.1",
     "typescript": "^3.7.5"
   },

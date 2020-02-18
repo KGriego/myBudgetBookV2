@@ -1,19 +1,12 @@
 /* Library Imports */
-import React, { useState, createContext } from "react";
+import React from "react";
 import { createAppContainer } from "react-navigation";
 
 /* Component Imports */
-import DrawerNavigator from "./navigation/drawerNavigator";
-
-const BlueContext = createContext(true);
+import DrawerNavigator from "./src/navigation/DrawerNavigator";
 
 const ApplicationContainer = createAppContainer(DrawerNavigator);
 
 export default function App() {
-  const [blue, setBlue] = useState(true);
-  return (
-    <BlueContext.Provider value={{ blue, setBlue }}>
-      <ApplicationContainer />
-    </BlueContext.Provider>
-  );
+  return <ApplicationContainer />;
 }
