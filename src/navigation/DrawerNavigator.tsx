@@ -5,6 +5,7 @@ import { createDrawerNavigator } from "react-navigation-drawer";
 
 /* Component Imports */
 import TransactionsScreen from "../pages/TransactionsHome";
+import AddTransactionsScreen from "../pages/AddTransactions";
 // import AccountManagementScreen from "../pages/AccountManagement";
 // import RecurringTransactionsScreen from "../pages/RecurringTransactions";
 // import CatergoryManagementScreen from "../pages/CategoryManagement";
@@ -35,6 +36,16 @@ const DrawerNavigator = createDrawerNavigator(
           <Ionicons name={`md-home`} style={{ color: tintColor }} />
         ),
         drawerLabel: `Transactions`
+      }
+    },
+    AddTransactions: {
+      screen: AddTransactionsScreen,
+      navigationOptions: {
+        // eslint-disable-next-line react/prop-types
+        drawerIcon: ({ tintColor }) => (
+          <Ionicons name={`md-home`} style={{ color: tintColor }} />
+        ),
+        drawerLabel: `Add Transactions`
       }
     }
     // "Account Management": {

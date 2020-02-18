@@ -20,21 +20,19 @@ const styles = StyleSheet.create({
   }
 });
 
-class DrawerTrigger extends React.Component<DrawerTriggerProps> {
-  render() {
-    const { title, navigation } = this.props;
-    return (
-      <TouchableOpacity
-        style={styles.trigger}
-        onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
-      >
-        <Ionicons name={`md-menu`} size={30} color={`grey`}>
-          {` `}
-          {title}
-        </Ionicons>
-      </TouchableOpacity>
-    );
-  }
+function DrawerTrigger(props: DrawerTriggerProps) {
+  const { title, navigation } = props;
+  return (
+    <TouchableOpacity
+      style={styles.trigger}
+      onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
+    >
+      <Ionicons name={`md-menu`} size={30} color={`grey`}>
+        {` `}
+        {title}
+      </Ionicons>
+    </TouchableOpacity>
+  );
 }
 
 export default withNavigation(DrawerTrigger);

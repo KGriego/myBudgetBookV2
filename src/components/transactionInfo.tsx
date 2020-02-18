@@ -40,7 +40,7 @@ export default function TransactionInfo(props: TransactionInfoProps) {
         <View style={styles.container}>
           <Text style={{ color: `red` }}>{name}</Text>
           <Text style={{ color: `red`, textAlign: `right`, flexGrow: 1 }}>
-            {`Day, month/day/year`}
+            Day, month/day/year
           </Text>
         </View>
         <View style={styles.container}>

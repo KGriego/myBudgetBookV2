@@ -2,12 +2,13 @@
 import React from "react";
 import { TouchableOpacity, StyleSheet, Platform } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-// withNavigation allows components to dispatch navigation actions
 import { withNavigation, NavigationInjectedProps } from "react-navigation";
 
 // Component Props
 interface DrawerTriggerProps extends NavigationInjectedProps {
   title: string;
+  // these are routes that exist on this app
+  lastRoute: string | "Transactions";
 }
 
 const styles = StyleSheet.create({
@@ -19,30 +20,28 @@ const styles = StyleSheet.create({
   }
 });
 
-class DrawerTrigger extends React.Component<DrawerTriggerProps> {
-  render() {
-    // console.log("DrawTrigger", this.props);
-    const {
-      title,
-      navigation: { navigate, state }
-    } = this.props;
-    return (
-      <TouchableOpacity
-        style={styles.trigger}
-        /* pass key down to *EditPage* */
-        onPress={() => navigate(`Transactions`, { go_back_key: state.key })}
+function DrawerTrigger(props: DrawerTriggerProps) {
+  const {
+    title,
+    lastRoute,
+    navigation: { navigate, state }
+  } = props;
+  return (
+    <TouchableOpacity
+      style={styles.trigger}
+      /* pass key down to *EditPage* */
+      onPress={() => navigate(lastRoute, { go_back_key: state.key })}
+    >
+      <Ionicons
+        name={Platform.OS === `ios` ? `ios-arrow-back` : `md-arrow-back`}
+        size={30}
+        color={`grey`}
       >
-        <Ionicons
-          name={Platform.OS === `ios` ? `ios-arrow-back` : `md-arrow-back`}
-          size={30}
-          color={`grey`}
-        >
-          {` `}
-          {title}
-        </Ionicons>
-      </TouchableOpacity>
-    );
-  }
+        {` `}
+        {title}
+      </Ionicons>
+    </TouchableOpacity>
+  );
 }
 
 export default withNavigation(DrawerTrigger);

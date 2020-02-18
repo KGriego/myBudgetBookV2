@@ -1,23 +1,9 @@
+/* Library Imports */
 import React from "react";
-// import { View, Text, StyleSheet } from 'react-native';
 
-// pull in from DrawerTrigger.js
+/* Component Imports */
 import DrawerTrigger from "./drawTrigger";
 import MainTabNavigator from "../navigation/mainTabNavigator";
-
-type HeaderProps = {
-  title: string;
-};
-
-const Header = (props: HeaderProps) => {
-  const { title } = props;
-  return (
-    <>
-      <DrawerTrigger title={title} />
-      <MainTabNavigator />
-    </>
-  );
-};
 
 // const styles = StyleSheet.create({
 //   header: {
@@ -26,4 +12,16 @@ const Header = (props: HeaderProps) => {
 //   }
 // });
 
-export default Header;
+type HeaderProps = {
+  title: string;
+};
+
+export default function Header(props: HeaderProps) {
+  const { title } = props;
+  return (
+    <>
+      <DrawerTrigger title={title} />
+      <MainTabNavigator />
+    </>
+  );
+}

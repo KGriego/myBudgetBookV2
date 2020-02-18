@@ -28,7 +28,6 @@ export default function TransactionsList(props: TransactionsListProps) {
     <View style={styles.container}>
       {data.map(transaction => (
         <View key={JSON.stringify(transaction)}>
-          {/* transaction is all the transactions for that day */}
           <TransactionInfoHeader info={transaction} />
         </View>
       ))}

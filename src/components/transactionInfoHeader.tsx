@@ -45,8 +45,8 @@ export default function TransactionInfoContainer(
           <Text style={{ color: `blue` }}>{day.format(`DD`)}</Text>
         </View>
         <View>
-          <Text style={{ color: `blue` }}>{`Current Balance`}</Text>
-          <Text style={{ color: `blue` }}>{`Month Year (DayOfWeek)`}</Text>
+          <Text style={{ color: `blue` }}>Current Balance</Text>
+          <Text style={{ color: `blue` }}>Month Year (DayOfWeek)</Text>
         </View>
         <View>
           <Text style={{ color: `blue`, textAlign: `right`, flexGrow: 1 }}>

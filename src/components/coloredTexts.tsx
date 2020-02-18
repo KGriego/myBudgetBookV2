@@ -4,18 +4,21 @@ import { Text } from "react-native";
 
 type coloredTextProps = {
   text: string;
-  styles?: Object;
-  onPress?: any;
+  // eslint-disable-next-line no-undef
+  styles?: object;
+  onPress?: () => void;
 };
 
 // White Text
-export const WhiteText = ({ text }: coloredTextProps) => (
-  <Text style={{ color: `#fff` }}>{text}</Text>
-);
+export function WhiteText({ text }: coloredTextProps) {
+  return <Text style={{ color: `#fff` }}>{text}</Text>;
+}
 // Red Text
-export const RedText = ({ text, styles, onPress }: coloredTextProps) => (
-  <Text style={{ color: `red`, ...styles }} onPress={onPress}>
-    {text}
-  </Text>
-);
+export function RedText({ text, styles, onPress }: coloredTextProps) {
+  return (
+    <Text style={{ color: `red`, ...styles }} onPress={onPress}>
+      {text}
+    </Text>
+  );
+}
 RedText.defaultProps = { styles: {}, onPress: null };

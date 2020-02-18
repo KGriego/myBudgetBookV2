@@ -5,7 +5,6 @@ import { createStackNavigator } from "react-navigation-stack";
 // pull in header with DrawerTrigger
 import { RedText } from "../components/coloredTexts";
 import TabBarIcon from "../components/tabBarIcon";
-import { Transactions } from "./transactions";
 import DatePicker from "../components/datePicker";
 
 const config = Platform.select({
@@ -29,13 +28,16 @@ const DiagramStack = createStackNavigator(
       navigationOptions: { header: () => <DatePicker /> }
     }
   },
+  // @ts-ignore
   config
 );
 
 DiagramStack.navigationOptions = {
   tabBarLabel: `Diagram`,
+  // eslint-disable-next-line react/prop-types
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
+      // @ts-ignore
       focused={focused}
       name={Platform.OS === `ios` ? `ios-link` : `md-link`}
     />

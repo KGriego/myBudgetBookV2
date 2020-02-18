@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 function CatergoryManagementScreen() {
   return (
     <View style={styles.body}>
-      <BackTrigger title={`red`} />
+      <BackTrigger title={`red`} lastRoute={`Transactions`} />
       <RedText text={`CatergoryManagementScreen`} />
     </View>
   );

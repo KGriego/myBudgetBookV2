@@ -17,7 +17,7 @@ export class AccountManagement extends React.Component {
   render() {
     return (
       <View>
-        <BackTrigger title={`Account Management`} />
+        <BackTrigger title={`Account Management`} lastRoute={`Transactions`} />
         <RedText text={`Account Management Page`} />
       </View>
     );

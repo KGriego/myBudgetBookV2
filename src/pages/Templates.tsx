@@ -1,25 +1,6 @@
 /* Library Imports */
-import React, { useState, createContext, useContext } from "react";
-import { StyleSheet, View, Text, StatusBar } from "react-native";
-
-// pull in header with DrawerTrigger
-import { RedText } from "../components/coloredTexts";
-
-const BlueContext = createContext(true);
-
-const TemplatesScreen = ({ navigation }) => {
-  const { blue, setBlue } = useContext(BlueContext);
-  const bg = blue ? `blue` : `red`;
-
-  return (
-    <>
-      <StatusBar barStyle={`light-content`} />
-      <View style={[styles.body, { backgroundColor: bg }]}>
-        <Text>{`TemplatesScreen`}</Text>
-      </View>
-    </>
-  );
-};
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
 
 const styles = StyleSheet.create({
   body: {
@@ -41,5 +22,11 @@ const styles = StyleSheet.create({
   },
   highlight: { fontWeight: `700` }
 });
+
+const TemplatesScreen = () => (
+  <View style={styles.body}>
+    <Text>TemplatesScreen</Text>
+  </View>
+);
 
 export default TemplatesScreen;

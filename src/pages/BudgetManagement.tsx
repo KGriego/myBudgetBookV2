@@ -1,6 +1,6 @@
 /* Library Imports */
 import React from "react";
-import { StyleSheet, View, Text, StatusBar } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 /* Component Imports */
 import { RedText } from "../components/coloredTexts";
@@ -14,13 +14,10 @@ const styles = StyleSheet.create({
   }
 });
 
-const BudgetManagementScreen = props => (
-  <>
-    <StatusBar barStyle={`light-content`} />
-    <View style={styles.body}>
-      <RedText text={`BudgetManagementScreen`} />
-    </View>
-  </>
+const BudgetManagementScreen = () => (
+  <View style={styles.body}>
+    <RedText text={`BudgetManagementScreen`} />
+  </View>
 );
 
 export default BudgetManagementScreen;

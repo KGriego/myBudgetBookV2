@@ -9,7 +9,7 @@ type CustomDrawerProps = {
   items: Array<any>;
 };
 
-const CustomDrawer = (props: CustomDrawerProps) => {
+export default function CustomDrawer(props: CustomDrawerProps) {
   const { items } = props;
   return (
     <ScrollView>
@@ -17,18 +17,22 @@ const CustomDrawer = (props: CustomDrawerProps) => {
         <View
           style={{ flex: 1, alignItems: `center`, justifyContent: `center` }}
         >
-          <Text style={{ fontSize: 32 }}>{`Drawer`}</Text>
+          <Text style={{ fontSize: 32 }}>Drawer</Text>
           <DrawerNavigatorItems
             {...props}
             items={items.filter(item => {
               // if the route is transactions, don't show it in the drawer menu
-              if (item.routeName !== `Transactions`) return item;
+              if (
+                item.routeName === `Transactions` ||
+                item.routeName === `AddTransactions`
+              ) {
+                return null;
+              }
+              return item;
             })}
           />
         </View>
       </SafeAreaView>
     </ScrollView>
   );
-};
-
-export default CustomDrawer;
+}

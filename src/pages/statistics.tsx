@@ -29,18 +29,21 @@ const StatisticsStack = createStackNavigator(
       navigationOptions: { header: () => <DatePicker /> }
     }
   },
+  // @ts-ignore
   config
 );
 
 StatisticsStack.navigationOptions = {
   tabBarLabel: `Statistics`,
+  // eslint-disable-next-line react/prop-types
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
+      // @ts-ignore
       focused={focused}
       name={
-        Platform.OS === `ios`
-          ? `ios-information-circle${focused ? `` : `-outline`}`
-          : `md-information-circle`
+        Platform.OS === `ios` ?
+          `ios-information-circle${focused ? `` : `-outline`}` :
+          `md-information-circle`
       }
     />
   )
@@ -48,52 +51,4 @@ StatisticsStack.navigationOptions = {
 
 StatisticsStack.path = ``;
 
-// console.log(Object.keys(StatisticsStack.router));
-const prevGetStateForAction = StatisticsStack.router.getStateForAction;
-const prevChildRouters = StatisticsStack.router.childRouters;
-const prevGetComponentForState = StatisticsStack.router.getComponentForState;
-const prevGetComponentForRouteName = StatisticsStack.router.getComponentForRouteName;
-const prevGetActionCreators = StatisticsStack.router.getActionCreators;
-const prevGetPathAndParamsForState = StatisticsStack.router.getPathAndParamsForState;
-const prevGetActionForPathAndParams = StatisticsStack.router.getActionForPathAndParams;
-const prevGetScreenOptions = StatisticsStack.router.getScreenOptions;
-
-StatisticsStack.router.getStateForAction = (action, state) =>
-// console.log("getStateForAction");
-// console.log(action, state);
-// console.log("==============");
-// if (state && action.type === "Navigation/COMPLETE_TRANSITION") {
-//   let routes = state.routes;
-
-//   if (routes.length === 1) {
-//     return {
-//       ...state,
-//       index: 0,
-//     };
-//   }
-
-//   const lastScene: NavigationRoute = routes.slice(-1)[0];
-//   const lastSceneName = lastScene.routeName;
-
-//   routes = routes.filter((item: NavigationRoute, index: number) => {
-//     if (index === 0) {
-//       return true;
-//     }
-
-//     return (item.routeName !== lastSceneName)
-//   });
-
-//   routes.push(lastScene);
-
-//   return {
-//     ...state,
-//     index: routes.length - 1,
-//     routes
-//   };
-// }
-
-  prevGetStateForAction(action, state);
-StatisticsStack.router.getComponentForRouteName = routeName =>
-  // console.log("getComponentForRouteName", routeName);
-  prevGetComponentForRouteName(routeName);
 export default StatisticsStack;

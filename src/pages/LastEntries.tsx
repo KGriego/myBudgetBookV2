@@ -1,6 +1,6 @@
 /* Library Imports */
 import React from "react";
-import { StyleSheet, View, StatusBar } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 // pull in header with DrawerTrigger
 import { RedText } from "../components/coloredTexts";
@@ -16,12 +16,9 @@ const styles = StyleSheet.create({
 
 function LastEntriesScreen() {
   return (
-    <>
-      <StatusBar barStyle={`light-content`} />
-      <View style={styles.body}>
-        <RedText text={`LastEntriesScreen`} />
-      </View>
-    </>
+    <View style={styles.body}>
+      <RedText text={`LastEntriesScreen`} />
+    </View>
   );
 }
 

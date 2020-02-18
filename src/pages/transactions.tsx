@@ -1,22 +1,18 @@
 /* Library Imports */
 import React from "react";
-import { Platform, View } from "react-native";
+import { Platform, View, StyleSheet } from "react-native";
 import { createStackNavigator } from "react-navigation-stack";
-import { NavigationInjectedProps } from "react-navigation";
+import { withNavigation } from "react-navigation";
+
 /* Component Imports */
-import { RedText } from "../components/coloredTexts";
 import DatePicker from "../components/datePicker";
 import TransactionsList from "../components/transactionsList";
 import TabBarIcon from "../components/tabBarIcon";
 
 const config = Platform.select({
-  web: { headerMode: `screen` }
-  // default: {},
+  web: { headerMode: `screen` },
+  default: {}
 });
-
-interface TransactionsProps extends NavigationInjectedProps {
-  title: string;
-}
 
 const data = [
   {
@@ -57,27 +53,33 @@ const data = [
   }
 ];
 
-export class Transactions extends React.Component<TransactionsProps> {
-  // we won't need to configure navigationOptions just yet
-  static navigationOptions = {};
+const styles = StyleSheet.create({
+  homeContainer: { height: `100%`, width: `100vw` }
+});
 
-  render() {
-    return (
-      <View>
-        <TransactionsList data={data} />
-      </View>
-    );
-  }
+// Props that Transactions uses right below
+// interface TransactionsProps extends NavigationInjectedProps {}
+
+function Transactions() {
+  return (
+    <View style={styles.homeContainer}>
+      <TransactionsList data={data} />
+    </View>
+  );
 }
+
+const navigationTransactions = withNavigation(Transactions);
 
 // create array of objects for every page to map over and dynamically make the stacks
 const TransactionsStack = createStackNavigator(
   {
     Transactions: {
-      screen: Transactions,
-      navigationOptions: props => ({ header: () => <DatePicker /> })
+      screen: navigationTransactions,
+      // does take props
+      navigationOptions: () => ({ header: () => <DatePicker /> })
     }
   },
+  // @ts-ignore
   config
 );
 TransactionsStack.navigationOptions = {

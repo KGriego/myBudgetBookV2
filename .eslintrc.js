@@ -31,8 +31,10 @@ module.exports = {
     "import/extensions": 0,
     "comma-dangle": ["error", "never"],
     "no-unused-vars": "warn",
-    "object-curly-newline": ["error", { multiline: true }],
+    "object-curly-newline": ["error", { consistent: true }],
     "arrow-parens": ["error", "as-needed"],
+    "operator-linebreak": ["error", "after"],
+    "no-nested-ternary": 0,
     "react/jsx-filename-extension": [
       1,
       { extensions: [".js", ".jsx", ".tsx", ".ts"] }
@@ -42,6 +44,9 @@ module.exports = {
     "react/no-unused-prop-types": 0,
     "react/jsx-one-expression-per-line": 0,
     "react/jsx-props-no-spreading": 0,
-    "react/jsx-curly-brace-presence": ["error", "always"]
+    "react/jsx-curly-brace-presence": [
+      "error",
+      { children: "never", props: "always" }
+    ]
   }
 };
