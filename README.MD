@@ -69,4 +69,4 @@ Start the local server for expo in offline mode and make all connections for and
 
 ### TODO's
 
-- [ ] - Finish this readme
+- [ ] Finish this readme
