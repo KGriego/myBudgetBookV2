@@ -1,18 +1,18 @@
 # Materials
 
 - Pressure cooker (PC)($40+)(Normal pot can work)
-- Jars (Half pint or Pint) (Brand: Ball Lip, Type: Wide Mouth) (12 pack - \$10ish)
+- Jars (Half pint or Pint) (Brand: Ball Lip, Type: Wide Mouth) (12 pack - $10ish)
 - Hammer & 1/8-inch (3 mm) nail
-- Coco coir (Home Depot: About \$15/11LBS) - Optional
+- Coco coir (Home Depot: About $15/11LBS) - Optional
 - Grain (Most expensive to least):
   - Rye Grass Seed
-  - Millet (About \$40/50LBS)
-  - Whole oats (About \$15/50LBS at tractor supply)
+  - Millet (About $40/50LBS)
+  - Whole oats (About $15/50LBS at tractor supply)
   - Wild Bird Seed
   - Popcorn
   - Brown Rice Flour (BRF)
-- Gypsum (Ace Hardware: \$20ish/25LBS) - Optional
-- Vermiculite (Home depot: \$23)
+- Gypsum (Ace Hardware: $20ish/25LBS) - Optional
+- Vermiculite (Home depot: $23)
 - Isopropyl Alcohol
 - Spray Bottle
 - Measuring cups
