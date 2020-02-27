@@ -1,6 +1,7 @@
 # Materials
 
 - Pressure cooker (PC)(\$40+)(Normal pot can work)
+- 110 Quart container bin (Big enough to hold jars being used and spores)
 - Jars (Half pint or Pint) (Brand: Ball Lip, Type: Wide Mouth) (12 pack - \$10ish)
 - Hammer & 1/8-inch (3 mm) nail
 - Coco coir (Home Depot: About \$15/11LBS) - Optional
@@ -13,11 +14,12 @@
   - Brown Rice Flour (BRF)
 - Gypsum (Ace Hardware: \$20ish/25LBS) - Optional
 - Vermiculite (Home depot: \$23)
-- Isopropyl Alcohol
+- Isopropyl Alcohol - 70% (more water helps sterilize better than 90%)
 - Spray Bottle
 - Measuring cups
 - Micropore Tape or Polyfill (Walmart)
 - Aluminum Foil
+- Gloves
 
 ### Preparing Grain: (Skip if using BRF)
 
@@ -39,6 +41,10 @@
    1. 400 grams of Water mixed with a teaspoon of gypsum for every jar
    1. Mix until water has been absorbed by Vermiculite
 1. After Vermiculite and water have been mixed, add 270 of BRF for every jar.
+
+### Still Air Box: (S.A.B)
+
+1. https://www.shroomery.org/forums/showflat.php/Number/23990888/fpart/all/vc/1
 
 ### Preparing Jars:
 
@@ -81,3 +87,4 @@
 
 GordoTEK: https://www.youtube.com/watch?v=ckLJgKy2taM (1h 45min)
 BRF Cake Recipe: https://www.youtube.com/watch?v=owDBjC3-3cI (16:41) (Hate his voice)
+SAB: https://www.shroomery.org/forums/showflat.php/Number/23990888/fpart/all/vc/1
