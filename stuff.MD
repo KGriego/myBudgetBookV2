@@ -1,6 +1,6 @@
 # Materials
 
-- Pressure cooker (PC)(\$40+)(Normal pot can work)
+- Pressure cooker (PC)($40+)(Normal pot can work)
 - Jars (Half pint or Pint) (Brand: Ball Lip, Type: Wide Mouth) (12 pack - \$10ish)
 - Hammer & 1/8-inch (3 mm) nail
 - Coco coir (Home Depot: About \$15/11LBS)
